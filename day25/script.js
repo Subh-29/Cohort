@@ -24,3 +24,26 @@ indianGreeter("Lyagbyagournis");
 let spanishGreeter = greetings("Hola!");
 
 spanishGreeter("Natalie");
+
+
+//Executing the function only once
+
+function onceCaller(fun) {
+    let called = false;
+    return function(args) {
+        if(!called) {
+            called = true;
+            return fun(args);
+        }
+        else {
+            console.error("already called once");
+        }
+    }
+}
+
+let once = onceCaller((value) => {
+    console.log(value)
+})
+
+once("hello");
+once();
