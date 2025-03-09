@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    perspective: 1500px;
+}
+
+.box {
+    display: flex;
+    background-image: url(https://images.unsplash.com/photo-1611343693811-2c235c683f26?q=80&w=2129&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: 300% 200%;
+    margin: 20px 20px;
+    width: 500px;
+    height: 500px;
+    animation: champak 10s infinite linear;
+}
+
+@keyframes champak {
+    0% {
+        background-position: 100% 100%;
+    }
+    25%{
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 50% 0%;
+    }
+    75%{
+        background-position: 0% 100%;
+    }
+    100%{
+        background-position: 100% 100%;
+    }
+}

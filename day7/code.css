@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.terminal{
+    position: relative;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 20px;
+}
+
+.termhead{
+    border-bottom: 1px solid gray;
+}
+
+.cpp{
+    display: block;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(54, 48, 48);
+}

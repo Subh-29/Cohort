@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: rgb(7, 11, 11);
+    color: white;
+    perspective: 2000px;
+}
+.header{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    margin: 10px;
+    padding: 20px;
+    
+}
+
+.flakes{
+    position: absolute;
+    animation: snowing linear infinite, fall ease-in-out infinite;
+}
+
+.flakes:nth-child(1){
+    left: 7%;
+    opacity: 0.7;
+    font-size: 1.7em;
+    animation-duration: 10s, 20s;
+}
+.flakes:nth-child(2){
+    left: 20%;
+    opacity: 0.9;
+    font-size: 2em;
+    animation-duration: 10s, 15s;
+}
+.flakes:nth-child(3){
+    left: 30%;
+    opacity: 0.5;
+    font-size: 1.4em;
+    animation-duration: 12s, 18s;
+}
+.flakes:nth-child(4){
+    left: 55%;
+    opacity: 0.7;
+    font-size: 1.8em;
+    animation-duration: 7s, 12s;
+}
+.flakes:nth-child(5){
+    left: 70%;
+    opacity: 0.2;
+    font-size: 1.3em;
+    animation-duration: 15s, 18s;
+}
+.flakes:nth-child(6){
+    left: 88%;
+    opacity: 0.4;
+    font-size: 1.9em;
+    animation-duration: 10s, 15s;
+}
+.flakes:nth-child(7){
+    left: 94%;
+    opacity: 0.8;
+    font-size: 2.5em;
+    animation-duration: 12s, 24s;
+}
+
+@keyframes snowing {
+    50%{
+        transform: translateX(-20vw);
+    }
+}
+
+@keyframes fall {
+    0%{
+        top: 0%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+
+.nav{
+    border: solid rgb(99, 183, 213);
+    background: linear-gradient(to right bottom, rgb(92, 92, 182), rgb(117, 212, 212), lightblue);
+    border-width: 1px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 15px;
+    box-shadow: 5px 5px 20px rgb(102, 168, 181);
+    font-family: 'Times New Roman', Times, serif;
+    position:relative;
+}
+
+.navs{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin:10px;
+}
+
+.divider{
+    margin: 20px;
+    font-weight:900;
+    color: black;
+}
+
+.line{
+    margin: 30px 10px;
+}
+
+.vlogbody{
+    margin: 30px 10px;
+    padding: 10px;
+    border: solid grey 1px;
+    background-color: rgba(101, 194, 220, 0.151);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px white;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.vloghead{
+    font-size: 25px;
+    margin: 5px;
+    padding: 5px;
+    font-weight: 1000;
+}
+.about{
+    margin: 5px;
+    font-weight: 50;
+}
+.images{
+    text-align: center;
+}
+
+#lists{
+    margin: 5px;
+}
+
+.exampleslist{
+    margin-left: 30px;
+}
+#mig29 {
+    position: relative;
+    width: 45vw;
+    z-index: 9;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px grey;
+    margin: 10px 10px;
+    transition: transform 1s ease-in-out;
+    transform-origin: center;  /* Ensures rotation happens from the center */
+}
+
+#mig29:hover {
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 5px wheat;
+}
+
+
+.foot{
+    text-align: center;
+    border: solid grey 0.5px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 15px;
+    background: linear-gradient(to bottom left, rgb(8, 8, 20), rgb(33, 54, 61), rgba(244, 226, 226, 0.301));
+    text-transform: capitalize;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+}
+
+@media screen and (max-width: 750px) {
+    #mig29{
+        width: 60vw;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px grey;
+        margin: 10px 10px;
+    } 
+}

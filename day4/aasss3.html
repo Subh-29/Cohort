@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .arrow {
+            background-color: red;
+            width: 300px;
+            height: 100px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrowbody {
+            position: absolute;
+            width: 70%;
+            background: #000;
+            height: 1px;
+
+        }
+
+        .arrowhead {
+            position: absolute;
+            width: 20%;
+            background: #000;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 1px;
+            transform: rotateZ(25deg);
+            top: 0%;
+            right: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="bg-music" controls loop autoplay muted>
+        <source src="/day19/audios/california dreamin.mp3" type="audio/mpeg">
+        Your browser tpm
+    </audio>
+
+    <script>
+        window.onload = function () {
+            let audio = document.getElementById("bg-music");
+            audio.muted = false; // Unmute after loading
+            audio.play().catch(error => console.log("Autoplay blocked:", error));
+        };
+    </script>
+</body>
+
+</html>

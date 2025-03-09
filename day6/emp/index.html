@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .submit-btn {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: black;  /* Now visible */
+    border: 2px solid white;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.submit-btn::before,
+.submit-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: white;
+    z-index: 0;  /* Below the text but above the button */
+    transition: transform 0.5s ease-out;
+}
+
+.submit-btn::before {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.submit-btn::after {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.submit-btn:hover::before {
+    transform: translateX(0);
+}
+
+.submit-btn:hover::after {
+    transform: translateX(0);
+}
+
+.submit-btn:hover {
+    color: black;  /* Changes text color */
+    z-index: 1;  /* Ensures text stays on top */
+}
+
+    </style>
+</head>
+<body>
+    <button class="submit-btn">Submit</button>
+</body>
+</html>

@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to bottom right, black, blue, cyan, aqua, teal); */
+    background-color: white;
+    color: black;
+    background-repeat: no-repeat;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.head h1{
+    font-size: 10vw;
+    font-family: "Work Sans", serif;
+    font-weight: 900;
+}
+
+.head h3{
+    font-size: 5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+.listbody{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.prod{
+    border: 1.5px solid #d3d3d3;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px white;
+    margin: 20px;
+    padding: 20px;
+    overflow: hidden;
+    word-wrap: break-word;
+    /* background: linear-gradient(to bottom right, blue, lightblue, cyan); */
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prodimage{
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 10px 5px;
+    display: block;
+}
+
+.prodtitle{
+    font-family: "Source Code Pro", serif, sans-serif;
+    font-size: 6vw;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.proddetails{
+    font-family: monospace, sans-serif, serif;
+    font-size: 4vw;
+    font-weight: 100;
+}
+
+.price{
+    position: relative;
+    word-spacing: 10px;
+}
+.prodprice{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2vh;
+    letter-spacing: 2px;
+    padding: 3px;
+    font-weight: 700;
+    transition: all 0.8s ease-in-out;
+    z-index: 1;
+}
+.prodrealprice{
+    z-index: -1;
+    font-size: 2vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    padding: 3px;
+    letter-spacing: 2px;
+    transform: translateY(-100%);
+    transition: all 1s ease-in-out;
+}
+.prod:hover .prodprice{
+    text-decoration:line-through;
+    transform: translateX(-50%);
+}
+.prod:hover .prodrealprice{
+    transform: translate(50%, -100%);
+    z-index: 1;
+}
+
+.buybutton{
+    position: relative;
+    width: 40vw;
+    height: 100%;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(to bottom right, rgb(227, 225, 225), rgb(172, 166, 166), rgb(89, 92, 92));
+    border-radius: 10px;
+    transform: translateY(+50%);
+    z-index: -1;
+    transition: all 0.8s ease-in-out;
+    
+}
+.prod:hover .buybutton{
+    z-index: 2;
+    transform: translateY( -50%);
+    
+}
+.buybutton:hover{
+    background: linear-gradient(to bottom left, rgb(89,92,92), rgb(172, 166, 166), rgb(227, 225, 225));
+}
+.foot{
+    text-align: center;
+    border: solid grey 0.5px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 15px;
+    background: linear-gradient(to bottom left, rgb(8, 8, 20), rgb(33, 54, 61), rgba(244, 226, 226, 0.301));
+    text-transform: capitalize;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+}
+@media (min-width: 768px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(to bottom right, black, blue, cyan, aqua, teal); */
+        background-color: white;
+        color: black;
+        background-repeat: no-repeat;
+        transition: all 0.6s ease-in-out;
+    }
+    
+    .head{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .head h1{
+        font-size: 10vh;
+        font-family: "Work Sans", serif;
+        font-weight: 900;
+    }
+    
+    .head h3{
+        font-size: 5vh;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 500;
+    }
+    .listbody{
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(200px, 1fr));
+        /* grid-template-rows: repeat(2, minmax(200px, 1fr)); */
+    }
+    
+    .prod{
+        position: relative;
+        border: 1.5px solid #d3d3d3;
+        border-radius: 10px;
+        box-shadow: 10px 10px 50px white;
+        margin: 10px 10px;
+        padding: 10px;
+        overflow: hidden;
+        word-wrap: break-word;
+        /* background: linear-gradient(to bottom right, blue, lightblue, cyan); */
+        background-color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-break: loose;
+    }
+    
+    .prodimage{
+        max-width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 10px;
+        margin: 10px 5px;
+        display: block;
+        object-fit: cover;
+    }
+    
+    .prodtitle{
+        font-family: "Source Code Pro", serif, sans-serif;
+        font-size: 3vh;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+    
+    .proddetails{
+        font-family: monospace, sans-serif, serif;
+        font-size: 1.5vh;
+        font-weight: 100;
+    }
+    
+    .price{
+        position: relative;
+        word-spacing: 10px;
+        display: inline;
+    }
+    .prodprice{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2vh;
+        letter-spacing: 2px;
+        padding: 5px;
+        font-weight: 700;
+        transition: all 0.8s ease-in-out;
+        z-index: 1;
+    }
+    .prodrealprice{
+        z-index: -1;
+        opacity: 0;
+        font-size: 2vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 700;
+        padding: 5px;
+        letter-spacing: 2px;
+        transform: translateY(-100%);
+        transition: all 1s ease-in-out;
+    }
+    .prod:hover .prodprice{
+        text-decoration:line-through;
+        transform: translateX(-50%);
+    }
+    .prod:hover .prodrealprice{
+        transform: translate(50%, -100%);
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .buy{
+        width: 100%;
+    }
+    .buybutton{
+        position: relative;
+        width: 50%;
+        height: 100%;
+        cursor: pointer;
+        border: 0px;
+        background: linear-gradient(to bottom right, rgb(227, 225, 225), rgb(172, 166, 166), rgb(89, 92, 92));
+        border-radius: 10px;
+        transform: translateY(+50%);
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.8s ease-in-out;
+        
+    }
+
+    .prod:hover .buybutton{
+        z-index: 2;
+        transform: translateY( -50%);
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.8s ease-in-out;
+        
+    }
+    .buybutton:hover{
+        background: linear-gradient(to bottom left, rgb(89,92,92), rgb(172, 166, 166), rgb(227, 225, 225));
+    }
+    .foot{
+        text-align: center;
+        border: solid grey 0.5px;
+        margin: 10px;
+        padding: 20px;
+        font-size: 15px;
+        background: linear-gradient(to bottom left, rgb(8, 8, 20), rgb(33, 54, 61), rgba(244, 226, 226, 0.301));
+        text-transform: capitalize;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        /* border-top-left-radius: 10px;
+        border-top-right-radius: 10px; */
+    }
+
+    /* @keyframes katla {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    } */
+}
+

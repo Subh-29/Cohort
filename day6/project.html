@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form">
+        <form action="submit.html" id="details" method="post">
+            <div class="formhead">
+                Contact Us
+            </div>
+            <label for="name" class="formdatas">Name:</label>
+            <input type="text" id="name" class="inputs" name="name" placeholder="Enter your name here" required>
+
+            <label for="email" class="formdatas">Email ID:</label>
+            <input type="email" id="email" class="inputs" name="email" placeholder="Enter your email id here" required>
+
+            <label for="message" class="formdatas">Message:</label>
+            <textarea name="message" class="inputs" id="message" rows="10" cols="20" placeholder="Enter your message here" required>
+            </textarea>
+
+            <button id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

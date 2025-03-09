@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grids{
+    display: grid;
+    border: 1px solid black;
+    width: 400px;
+    height: 300px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px;
+}
+
+.elements{
+    border: 0px;
+    background: linear-gradient(to right bottom, blue, lightblue, cyan);
+}
