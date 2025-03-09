@@ -47,3 +47,18 @@ let once = onceCaller((value) => {
 
 once("hello");
 once();
+
+//Throtling a function
+
+function throttlerFun(fun, delay) {
+    let lastcall = 0;
+    return function() {
+        let current = Date.now();
+        if (current - lastcall > delay) {
+            lastcall = current;
+            fun();
+        }
+    }
+}
+
+let helloThrottler = throttlerFun(() => console.log("Hello"), 10000);
