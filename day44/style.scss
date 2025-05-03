@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  //outline: 1px solid lime; // Uncomment for debugging layout
 }
 
 html,
@@ -10,48 +11,101 @@ body {
   height: 100%;
   background: #000;
   color: wheat;
-  font-size: 1em;
-  overflow-x: hidden;
+  // overflow-y: scroll; // Optional: force scrollbar always visible to prevent layout shifts
 }
 
 main {
+  padding: 20px;
+  // padding-top: 30px; // Prevent content from going under navbar
   display: flex;
+  flex-direction: column;
+  position: relative;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  .button {
-    position: absolute;
-    width: 45px;
-    aspect-ratio: 1/1;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+  width: 100%;
+  gap: 180px;
+
+  .nav-bar {
+    width: 100%;
+
+    .nav {
+      width: 90%;
+      height: 50px;
+      position: fixed;
+      top: 10px;
+      left: 5%; // Keeps it centered without touching the edges
+      background: rgba(120, 19, 201, 0.2);
+      backdrop-filter: blur(20px);
+      border-radius: 10px;
+      z-index: 1000;
+      transition: 0.6s ease-in-out;
+    }
+  }
+
+  .btn {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: none;
-    border-radius: 50%;
 
-    button {
+    .button {
       position: absolute;
-      background: none;
-      color: white;
-      width: 20px;
-      aspect-ratio: 1/1;
+      width: 150px;
+      aspect-ratio: 1 / 1;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: none;
-      background: teal;
-      font-size: 0.5em;
       border-radius: 50%;
-      transition: 0.5s ease;
-    }
 
-    button:hover {
-      background: rgb(33, 163, 163);
-    }
+      button {
+        position: absolute;
+        width: 50px;
+        aspect-ratio: 1 / 1;
+        background: teal;
+        color: white;
+        font-size: 0.5em;
+        border: none;
+        border-radius: 50%;
+        transition: 0.5s ease;
 
-    button:active {
-      scale: 0.9;
-      background: red;
-      color: black;
+        &:hover {
+          background: rgb(33, 163, 163);
+        }
+
+        &:active {
+          scale: 0.9;
+          background: red;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .dbl-clk {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .card {
+      width: 400px;
+      position: relative;
+      background: green;
+
+      .reel {
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
     }
   }
 }
