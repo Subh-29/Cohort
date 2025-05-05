@@ -93,4 +93,30 @@ orderPizza()
         .finally(() => {
             console.log("✅ All done!");
         });
-    
+
+
+data = {
+    user: ["Subh", "Mig", "Fulcrum"],
+    post: ["Post 1", "Post 2", "Post 3"]
+}
+
+//Fake API call
+function fakeAPICall(key) {
+    let delay = Math.floor(Math.random() * 1000 + 5000);
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            Math.random() < 0.6 ? res(data[key]) : rej(505);
+        }, delay)
+    });
+}
+
+fakeAPICall("user").then(users => {
+    console.log(`All the users are: ${users}`);
+}).catch(err => {
+    console.error(`Error ${err} Occured`);
+})
+fakeAPICall("post").then(users => {
+    console.log(`All the users are: ${users}`);
+}).catch(err => {
+    console.error(`Error ${err} Occured`);
+})
