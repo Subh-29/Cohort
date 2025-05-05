@@ -4,9 +4,130 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 html, body {
   width: 100%;
   height: 100%;
   background: #000;
   color: wheat;
+  font-size: 1rem;
 }
+
+.form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.form #gitForm {
+  width: 50%;
+  max-width: 400px;
+  min-width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid beige;
+  border-radius: 25px;
+  background: linear-gradient(to bottom right, royalblue, #262c36, #010409, rgba(27, 35, 57, 0.53), #0d1117, #262c36, rgb(8, 28, 28));
+}
+.form #gitForm #username {
+  width: 70%;
+  height: 70px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.6rem;
+  background: rgba(120, 255, 225, 0.15);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  color: bisque;
+}
+.form #gitForm #username::-moz-placeholder {
+  text-align: center;
+  font-size: 1.6rem;
+  word-wrap: break-word;
+}
+.form #gitForm #username::placeholder {
+  text-align: center;
+  font-size: 1.6rem;
+  word-wrap: break-word;
+}
+.form #gitForm #username:focus {
+  outline: none;
+}
+.form #gitForm #form-btn {
+  width: 50%;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  color: pink;
+  background: linear-gradient(to bottom right, royalblue, #262c36, #010409);
+  font-size: 1.5rem;
+  text-align: center;
+  box-shadow: 10px 10px 30px 5px rgb(0, 0, 0);
+}
+.form .git-card {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  padding: 10px;
+  width: 350px;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid beige;
+  border-radius: 20px;
+  font-family: monospace, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: linear-gradient(to right bottom, #262c36, #010409, #0d1117, #262c36);
+}
+.form .git-card .img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.form .git-card .img img {
+  width: 50%;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+.form .git-card .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #ccb889;
+}
+.form .git-card .details .name {
+  font-size: 3rem;
+  font-family: monospace, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.form .git-card .details #join-dt {
+  font-size: 1.3rem;
+  word-wrap: break-word;
+}
+.form .git-card .details .pubrepos {
+  font-size: 1.4rem;
+  font-family: monospace;
+}
+.form .git-card .details .profile-url {
+  font-weight: 800;
+  font-size: 1.3rem;
+  word-break: break-all;
+}
+.form .git-card .details .profile-url a {
+  text-decoration: none;
+  color: royalblue;
+}/*# sourceMappingURL=style.css.map */
