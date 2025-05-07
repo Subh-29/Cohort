@@ -1,0 +1,164 @@
+.middle {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+  overflow: hidden;
+}
+.row {
+  display: flex;
+}
+.square {
+  border: 1px solid white;
+  border-collapse: collapse;
+  width: 65px;
+  aspect-ratio: 1/1;
+  background: gray;
+
+  font-size: 1.8em;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square-X {
+  background: rgb(255, 139, 97);
+}
+.square-O {
+  background: rgb(0, 175, 17);
+}
+
+.square-win {
+  background: cyan;
+}
+
+
+.square:hover {
+  background: linear-gradient(to bottom right,gray, royalblue);
+}
+.square:active {
+  outline: none;
+  border: none;
+  transform: scale(0.9);
+}
+
+.confettis .confetti {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fall 10s linear infinite, swing 20s linear infinite;
+  pointer-events: none;
+}
+
+.confettis .confetti:nth-child(1) {
+  top: -90px;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 8s;
+  transform: rotateX(30deg);
+}
+.confettis .confetti:nth-child(2) {
+  top: -70px;
+  left: 30%;
+  animation-delay: 1s;
+  animation-duration: 7s;
+  transform: rotateX(100deg);
+}
+.confettis .confetti:nth-child(3) {
+  top: -100px;
+  left: 50%;
+  animation-delay: 2s;
+  animation-duration: 6s;
+  transform: rotateX(50deg);
+}
+.confettis .confetti:nth-child(4) {
+  top: -500px;
+  left: 38%;
+  animation-delay: 3s;
+  animation-duration: 9s;
+  transform: rotateX(120deg);
+}
+.confettis .confetti:nth-child(5) {
+  top: -200px;
+  left: 67%;
+  animation-delay: 4s;
+  animation-duration: 10s;
+  transform: rotateX(300deg);
+}
+.confettis .confetti:nth-child(6) {
+  top: -100px;
+  left: 86%;
+  animation-delay: 0.5s;
+  animation-duration: 7.5s;
+  transform: rotateX(270deg);
+}
+.confettis .confetti:nth-child(7) {
+  top: -240px;
+  left: 80%;
+  animation-delay: 1.5s;
+  animation-duration: 8.5s;
+}
+
+/* Add other customizations if needed */
+
+
+.confettis .confetti img {
+  width: 30px;
+}
+
+.confettis .confetti:nth-child(1) img {
+  width: 20px;
+}
+.confettis .confetti:nth-child(2) img {
+  width: 25px;
+}
+.confettis .confetti:nth-child(3) img {
+  width: 60px;
+}
+.confettis .confetti:nth-child(4) img {
+  width: 15px;
+}
+.confettis .confetti:nth-child(5) img {
+  width: 120px;
+}
+.confettis .confetti:nth-child(6) img {
+  width: 35px;
+}
+.confettis .confetti:nth-child(7) img {
+  width: 35px;
+}
+
+
+.reset-btn {
+  width: 100px;
+}
+
+@keyframes fall {
+  0% {
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    
+    opacity: 0;
+  }
+}
+
+@keyframes swing {
+  50% {
+    transform: translateX(-20vw);
+  }
+  75% {
+    transform: translateX(20vw);
+  }
+}
+
