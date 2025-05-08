@@ -263,7 +263,7 @@ const Board = ({ row, col, board, setBoard, isXnext, setIsXnext }) => {
         <div className="confettis">
           {[joker, joker, joker, joker, joker, joker, joker].map((src, i) => (
             <div className="confetti" key={i}>
-              <img src={src} alt="confetti" />
+              <img src={src} alt="joker" />
             </div>
           ))}
         </div>

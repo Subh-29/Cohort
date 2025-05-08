@@ -11,9 +11,11 @@
   top: 0;
   overflow: hidden;
 }
-.row {
-  display: flex;
+
+.text {
+  font-size: 1.7em;
 }
+
 .square {
   border: 1px solid white;
   border-collapse: collapse;
@@ -47,6 +49,11 @@
   outline: none;
   border: none;
   transform: scale(0.9);
+}
+
+/*Each Row of the board*/
+.row {
+  display: flex;
 }
 
 .confettis .confetti {
@@ -137,10 +144,6 @@
 }
 
 
-.reset-btn {
-  width: 100px;
-}
-
 @keyframes fall {
   0% {
     top: 0%;
@@ -162,3 +165,14 @@
   }
 }
 
+
+
+.reset-btn {
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.reset-btn:hover {
+  background: darkgray;
+}
