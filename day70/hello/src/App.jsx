@@ -286,6 +286,44 @@ const Game = () => {
 
   return (
     <div className="middle">
+      <div className="marquee">
+        <div className="texts">
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+        </div>
+        <div className="texts">
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+        </div>
+        <div className="texts">
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+          <div className="marq-text"><h1>Tic-Tac-Toe</h1></div>
+        </div>
+      </div>
       <Board
         row={row}
         col={col}
