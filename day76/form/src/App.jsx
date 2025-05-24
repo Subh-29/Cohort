@@ -2,8 +2,8 @@ import { useState } from "react";
 
 const App = () => {
   const [name, setName] = useState("");
-  const [complete, setComplete] = useState(true);
-  const [gender, setGender] = useState("female");
+  const [complete, setComplete] = useState(false);
+  const [gender, setGender] = useState("");
   const [city, setCity] = useState("default");
 
   return (
