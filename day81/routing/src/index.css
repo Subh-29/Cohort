@@ -1,1 +1,11 @@
+:root {
+  --primarybg: #1D1616;
+  --grayblue: #1d1a24;
+  --2: #8E1616;
+  --secondary: #3d0606;
+  --bg: #D84040;
+  --title: #fdea7e;
+  --font: #fbc69b;
+}
+
 @import "tailwindcss";

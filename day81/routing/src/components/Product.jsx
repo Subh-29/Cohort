@@ -1,8 +1,61 @@
+import { useNavigate } from "react-router-dom";
 
 const Product = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <div>Product</div>
+      <div className=" flex flex-col gap-5 ">
+        <h1 className=" text-6xl text-(--font) " >Products</h1>
+        <div className="container flex flex-col gap-10 ">
+          <div className="card md:w-100 px-3 py-3 flex flex-col gap-4 bg-(--grayblue) rounded-2xl justify-center items-start   ">
+            <div className=" w-full flex justify-between items-center  tracking-wide ">
+              <p className=" text-4xl text-[var(--title)]">Product 1</p>
+              <button className=" px-3 py-1 text-md bg-green-950 rounded-3xl md:hover:bg-[var(--2)] active:drop-shadow-md cursor-pointer active:scale-90 " onClick={() => {
+                navigate(`/product/details/Product 1`)
+              }} >Details</button>
+            </div>
+            <p className=" text-xl text-[var(--font)] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sit placeat voluptates perspiciatis corporis nulla!</p>
+          </div>
+          <div className="card md:w-100 px-3 py-3 flex flex-col gap-4 bg-(--grayblue) rounded-2xl justify-center items-start   ">
+            <div className=" w-full flex justify-between items-center  tracking-wide ">
+              <p className=" text-4xl text-[var(--title)]">Product 1</p>
+              <button className=" px-3 py-1 text-md bg-green-950 rounded-3xl md:hover:bg-[var(--2)] active:drop-shadow-md cursor-pointer active:scale-90 " onClick={() => {
+                navigate(`/product/details/Product 2`)
+              }} >Details</button>
+            </div>
+            <p className=" text-xl text-[var(--font)] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sit placeat voluptates perspiciatis corporis nulla!</p>
+          </div>
+          <div className="card md:w-100 px-3 py-3 flex flex-col gap-4 bg-(--grayblue) rounded-2xl justify-center items-start   ">
+            <div className=" w-full flex justify-between items-center  tracking-wide ">
+              <p className=" text-4xl text-[var(--title)]">Product 1</p>
+              <button className=" px-3 py-1 text-md bg-green-950 rounded-3xl md:hover:bg-[var(--2)] active:drop-shadow-md cursor-pointer active:scale-90 " onClick={() => {
+                navigate(`/product/details/Product 3`)
+              }} >Details</button>
+            </div>
+            <p className=" text-xl text-[var(--font)] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sit placeat voluptates perspiciatis corporis nulla!</p>
+          </div>
+          <div className="card md:w-100 px-3 py-3 flex flex-col gap-4 bg-(--grayblue) rounded-2xl justify-center items-start   ">
+            <div className=" w-full flex justify-between items-center  tracking-wide ">
+              <p className=" text-4xl text-[var(--title)]">Product 1</p>
+              <button className=" px-3 py-1 text-md bg-green-950 rounded-3xl md:hover:bg-[var(--2)] active:drop-shadow-md cursor-pointer active:scale-90 " onClick={() => {
+                navigate(`/product/details/Product 4`)
+              }} >Details</button>
+            </div>
+            <p className=" text-xl text-[var(--font)] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sit placeat voluptates perspiciatis corporis nulla!</p>
+          </div>
+          <div className="card md:w-100 px-3 py-3 flex flex-col gap-4 bg-(--grayblue) rounded-2xl justify-center items-start   ">
+            <div className=" w-full flex justify-between items-center  tracking-wide ">
+              <p className=" text-4xl text-[var(--title)]">Product 1</p>
+              <button className=" px-3 py-1 text-md bg-green-950 rounded-3xl md:hover:bg-[var(--2)] active:drop-shadow-md cursor-pointer active:scale-90 " onClick={() => {
+                navigate(`/product/details/Product 5`)
+              }} >Details</button>
+            </div>
+            <p className=" text-xl text-[var(--font)] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sit placeat voluptates perspiciatis corporis nulla!</p>
+          </div>
+
+        </div>
+      </div>
     </>
   );
 };

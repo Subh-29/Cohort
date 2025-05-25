@@ -2,7 +2,7 @@
 const About = () => {
   return (
     <>
-      <div>About</div>
+      <div className="text-[#7F8CAA]">About</div>
     </>
   );
 };
