@@ -17,10 +17,13 @@ const Create = () => {
     const submitHandler = data => {
         data.id = nanoid();
         data.isCompleted = false;
-        let copyTodos = [...todos];
         console.log("Submited");
-        copyTodos.push(data);
-        setTodos(copyTodos);
+        // let copyTodos = [...todos];
+        // copyTodos.push(data);
+        // setTodos(copyTodos);
+
+        //we can write this way:
+        setTodos([...todos, data]);
         toast.success("Todo successfully created");
         reset();
     };
@@ -32,12 +35,12 @@ const Create = () => {
                     className=" w-[50%] text-[1rem] md:text-xl focus:outline-none"
                     {...register("title", { required: "Title can't be empty", })}
                     placeholder="Task Name" />
+            <small className=" text-[0.7rem] relative top-[-35px] text-red-600 ">{errors?.title?.message}</small>
                 <button className=" text-[1.05rem] md:text-xl px-4 py-1 w-fit md:w-max rounded-xl bg-green-500 cursor-pointer md:active:scale-90 flex justify-center">
                     <span className=" ">Create Todo</span>
                 </button>
             </form>
             {/* {errors && errors.title && errors.title.message && <small className=" text-[0.7rem] relative top-[-35px] text-red-600 ">{errors.title.message}</small>} */}
-            <small className=" text-[0.7rem] relative top-[-35px] text-red-600 ">{errors?.title?.message}</small>
         </div>
     );
 };

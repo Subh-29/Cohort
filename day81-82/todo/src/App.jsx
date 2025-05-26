@@ -1,6 +1,5 @@
 
 import Create from "./components/Create";
-import { nanoid } from "nanoid";
 import Read from "./components/Read";
 
 const App = () => {
