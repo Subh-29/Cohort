@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 import { useForm, useFieldArray } from "react-hook-form";
 import { useContext } from "react";
 import { context } from "../contexts/MainContext";
+import { toast } from "react-toastify";
 
 const CreateRec = () => {
   const [data, setData] = useContext(context);
@@ -34,8 +35,9 @@ const CreateRec = () => {
 
     // console.log("Submitted Recipe:", recipe);
     setData([...data, recipe]);
-
+    toast.success("Recipe Successfully Created")
     reset();
+    
   };
   // console.log(data);
 

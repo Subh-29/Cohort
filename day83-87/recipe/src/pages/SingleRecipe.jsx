@@ -1,13 +1,16 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { context } from "../contexts/MainContext";
 import { nanoid } from "nanoid";
 import { useForm, useFieldArray } from 'react-hook-form'
+import { toast } from "react-toastify";
 const SingleRecipe = () => {
     const params = useParams();
 
     const [data, setData] = useContext(context);
     const recipe = data.find(element => element.id === parseInt(params.id));
+
+    const navigate = useNavigate();
     //console.log(recipe);
     const {
         register,
@@ -16,7 +19,7 @@ const SingleRecipe = () => {
         formState: { errors }
     } = useForm({
         defaultValues: {
-            "id" : recipe.id,
+            "id": recipe.id,
             "name": recipe.name,
             "image": recipe.image,
             "about": recipe.about,
@@ -29,20 +32,31 @@ const SingleRecipe = () => {
         name: "ingredients"
     });
 
-    const SubmitHandler = (formData) => {
+    const UpdateHandler = (formData) => {
         const oldRecipes = [...data];
-        console.log(formData);
-        
-        const newRecipeIndx =  oldRecipes.findIndex((oldRecipe, idx) => {
+        //console.log(formData);
+
+        const newRecipeIndx = oldRecipes.findIndex((oldRecipe, idx) => {
             if (oldRecipe.id === parseInt(formData.id))
                 return idx;
-        }) ;
+        });
 
-        oldRecipes[newRecipeIndx] = { ...oldRecipes[newRecipeIndx], ...formData}
-        console.log(oldRecipes);
+        oldRecipes[newRecipeIndx] = { ...oldRecipes[newRecipeIndx], ...formData }
+        //console.log(oldRecipes);
         setData(oldRecipes);
+        toast.success("Recipe Successfully Updated");
+        navigate(`/recipe/details/${params.id}`)
 
-    }
+    };
+
+    const DeleteHandler = () => {
+        const filteredData = data.filter(d => d.id !== parseInt(params.id));
+        setData(filteredData);
+        navigate("/recipe");
+        toast.success("Recipe Successfully Deleted")
+
+    };
+
     return (
         <div className=" flex flex-col gap-4">
             <p className=" text-[clamp(1rem,20vw,5rem)] text-wrap leading-none text-(--third) font-bold ">{recipe.name}</p>
@@ -57,8 +71,10 @@ const SingleRecipe = () => {
                     )
                 })}
             </div>
-
-            <form onSubmit={handleSubmit(SubmitHandler)} className=" text-lg px-3 py-4 rounded-xl flex flex-col justify-center gap-4 bg-(--darkbg) ">
+            <button onClick={DeleteHandler} className="bg-red-500 text-white px-4 py-2 rounded-lg mt-4">
+                Delete Recipe
+            </button>
+            <form onSubmit={handleSubmit(UpdateHandler)} className=" text-lg px-3 py-4 rounded-xl flex flex-col justify-center gap-4 bg-(--darkbg) ">
                 {/* <h2 className=" text-center text-5xl text-(--third) ">Add Recipe</h2> */}
                 <input
                     {...register("name", { required: "Recipe name is required!" })}
