@@ -27,7 +27,7 @@ const Recipe = () => {
         <div onClick={() => ShowRecipeHandler(e.id)} className=" w-full bg-(--darkbg) flex flex-col gap-3 px-3 py-4 rounded-2xl ">
           <div className=" flex gap-4 justify-between ">
 
-            <p className=" w-fit text-(--third) text-5xl font-extrabold border-b ">
+            <p className=" w-fit h-fit text-(--third) text-5xl font-extrabold border-b-3 ">
               {e.name}
             </p>
             <div>
