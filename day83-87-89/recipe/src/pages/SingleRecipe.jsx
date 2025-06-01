@@ -7,8 +7,8 @@ import { toast } from "react-toastify";
 const SingleRecipe = () => {
     const params = useParams();
 
-    const [data, setData] = useContext(context);
-    const recipe = data.find(element => element.id === parseInt(params.id));
+    const [data, setData, favs, setFavs] = useContext(context);
+    const recipe = data.find(element => element.id === params.id);
 
     const navigate = useNavigate();
     //console.log(recipe);
@@ -19,11 +19,11 @@ const SingleRecipe = () => {
         formState: { errors }
     } = useForm({
         defaultValues: {
-            "id": recipe.id,
-            "name": recipe.name,
-            "image": recipe.image,
-            "about": recipe.about,
-            "ingredients": recipe.ingredients
+            "id": recipe?.id,
+            "name": recipe?.name,
+            "image": recipe?.image,
+            "about": recipe?.about,
+            "ingredients": recipe?.ingredients
         }
     });
 
@@ -35,43 +35,69 @@ const SingleRecipe = () => {
     const UpdateHandler = (formData) => {
         const oldRecipes = [...data];
         //console.log(formData);
-
+        console.log(`form data id at update: ${formData.name}`);
+        
         const newRecipeIndx = oldRecipes.findIndex((oldRecipe, idx) => {
-            if (oldRecipe.id === parseInt(formData.id))
+            
+            if (oldRecipe.id === formData.id) {
+                console.log("Old recipe id: ", oldRecipe.id);
                 return idx;
+            }
         });
 
         oldRecipes[newRecipeIndx] = { ...oldRecipes[newRecipeIndx], ...formData }
+        console.log(oldRecipes[newRecipeIndx]);
+        
         //console.log(oldRecipes);
         setData(oldRecipes);
+        localStorage.setItem("recipes", JSON.stringify(oldRecipes));
         toast.success("Recipe Successfully Updated");
-        navigate(`/recipe/details/${params.id}`)
+        // navigate(`/recipe/details/${params.id}`)
 
     };
 
     const DeleteHandler = () => {
-        const filteredData = data.filter(d => d.id !== parseInt(params.id));
+        const filteredData = data.filter(d => d.id !== params.id);
+        const filteredFavs = favs.filter(fav => fav !== params.id);
+        setFavs(filteredFavs);
+        localStorage.setItem("recipes", JSON.stringify(filteredData));
+        localStorage.setItem("favs", JSON.stringify(filteredFavs));
         setData(filteredData);
         navigate("/recipe");
         toast.success("Recipe Successfully Deleted")
 
     };
 
-    return (
+    const FavHandler = () => {
+        const newFavs = [...favs, params.id];
+        localStorage.setItem("favs", JSON.stringify(newFavs));
+        setFavs([...favs, params.id]);
+    }
+    const UnfavHandler = () => {
+        const filteredFavs = favs.filter((fav) => fav !== params.id);
+        localStorage.setItem("favs", JSON.stringify(filteredFavs));
+        setFavs(filteredFavs);
+    }
+    return ( recipe?
         <div className=" flex flex-col gap-4">
-            <p className=" text-[clamp(1rem,20vw,5rem)] text-wrap leading-none text-(--third) font-bold ">{recipe.name}</p>
+            {favs.includes(params.id) ?
+            <i className=" absolute right-3 top-22 text-red-500 text-3xl ri-heart-3-fill transition duration-100 ease-in-out active:scale-90 " onClick={UnfavHandler} ></i>
+            :<i className=" absolute right-3 top-22 text-3xl ri-heart-3-line transition duration-100 ease-in-out active:scale-90 " onClick={FavHandler}  ></i>
+        }
+            {/* <i class="ri-heart-3-line"></i> */}
+            <p className=" text-[clamp(1rem,20vw,5rem)] text-wrap leading-none text-(--third) font-bold " onClick={UnfavHandler} >{recipe?.name}</p>
             <div>
-                <img className=" rounded-2xl w-full aspect-square object-cover" src={recipe.image} alt={`${recipe.name} Image`} />
+                <img className=" rounded-2xl w-full aspect-square object-cover" src={recipe?.image} alt={`${recipe?.name} Image`} />
             </div>
-            <p>{recipe.about}</p>
+            <p>{recipe?.about}</p>
             <div className=" text-xl text-(--fourth) bg-(--third)/40 flex flex-col gap-3 px-3 py-4 rounded-2xl ">
-                {recipe.ingredients.map((ingr, idx) => {
+                {recipe?.ingredients.map((ingr, idx) => {
                     return (
                         <p key={nanoid()}><span className=" text-(--first) ">{idx + 1}.</span> {ingr.name} | {ingr.qty}</p>
                     )
                 })}
             </div>
-            <button onClick={DeleteHandler} className="bg-red-500 text-white px-4 py-2 rounded-lg mt-4">
+            <button onClick={DeleteHandler} className="bg-red-500 text-white px-4 py-2 rounded-lg mt-4 active:scale-90">
                 Delete Recipe
             </button>
             <form onSubmit={handleSubmit(UpdateHandler)} className=" text-lg px-3 py-4 rounded-xl flex flex-col justify-center gap-4 bg-(--darkbg) ">
@@ -143,11 +169,11 @@ const SingleRecipe = () => {
                     ))}
                 </div>
 
-                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-lg mt-4">
-                    Submit
+                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-lg mt-4 active:scale-90">
+                    Update
                 </button>
             </form>
-        </div>
+        </div> : <div>Loading.....</div>
     );
 };
 

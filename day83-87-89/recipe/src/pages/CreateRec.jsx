@@ -6,7 +6,9 @@ import { toast } from "react-toastify";
 
 const CreateRec = () => {
   const [data, setData] = useContext(context);
-
+  // useEffect(() => {
+  //       localStorage.setItem("recipes", JSON.stringify(data));
+  // }, [data]);
   const {
     register,
     control,
@@ -35,9 +37,12 @@ const CreateRec = () => {
 
     // console.log("Submitted Recipe:", recipe);
     setData([...data, recipe]);
+    const newData = [...data];
+    localStorage.setItem("recipes", JSON.stringify(newData));
+
     toast.success("Recipe Successfully Created")
     reset();
-    
+
   };
   // console.log(data);
 
