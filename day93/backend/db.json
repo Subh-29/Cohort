@@ -1,0 +1,99 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Iron Vapor Chamber",
+      "description": "A lab-grade chamber capable of heating iron to vaporization temps. Not for home use... seriously.",
+      "price": 4999.99,
+      "views": 245,
+      "viewers": [
+        1,
+        2
+      ],
+      "likes": [
+        2
+      ],
+      "dislikes": [],
+      "stock": 3,
+      "category": "Lab Equipment"
+    },
+    {
+      "id": "2",
+      "title": "JSON Server Starter Kit",
+      "description": "Perfect for frontend devs who wanna fake it 'til they make it. Includes mock APIs, fake data, and a can-do attitude.",
+      "price": 29.99,
+      "views": 167,
+      "viewers": [
+        1
+      ],
+      "likes": [
+        1
+      ],
+      "dislikes": [
+        2
+      ],
+      "stock": 12,
+      "category": "Developer Tools"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Subhchintak",
+      "email": "subhchintak@example.com",
+      "bio": "Just a student tryna learn and break stuff (in a good way).",
+      "password": "lollol99"
+    },
+    {
+      "id": "2",
+      "name": "IronFan42",
+      "email": "ironfan42@spacejunkmail.com",
+      "bio": "Lowkey obsessed with metals and highkey into space.",
+      "password": "lollol99"
+    },
+    {
+      "id": "3",
+      "name": "CodeGoblin",
+      "email": "goblin.dev@bugmail.io",
+      "bio": "Eating bugs and spitting out features.",
+      "password": "lollol99"
+    },
+    {
+      "id": "HdudytsVmVzvwdJkaaEeV",
+      "name": "userAdmin",
+      "email": "subhradipkar101@gmail.com",
+      "password": "b b gbg",
+      "bio": "jftfgvg"
+    },
+    {
+      "id": "K_UXV5olrj8_nnoFK2mq7",
+      "name": "userAdmin",
+      "email": "subhradipkar101@gmail.com",
+      "password": "b b gbg",
+      "bio": "jftfgvg"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "productId": 1,
+      "authorId": 2,
+      "body": "This vapor chamber is wild! Feels like mad science in a box 😈",
+      "createdAt": "2025-06-21T10:15:00Z"
+    },
+    {
+      "id": "2",
+      "productId": 1,
+      "authorId": 3,
+      "body": "Bro... iron gas? Who even *needs* this? Me. I need this.",
+      "createdAt": "2025-06-21T11:03:00Z"
+    },
+    {
+      "id": "3",
+      "productId": 2,
+      "authorId": 1,
+      "body": "This saved me from building a backend from scratch. Total W.",
+      "createdAt": "2025-06-21T11:45:00Z"
+    }
+  ]
+}
