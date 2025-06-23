@@ -22,6 +22,17 @@ export const  userLogin  = (user) => async (dispatch,) => {
     }
 }
 
+
+export const allUserDetails = () => async (dispatch) => {
+    try {
+        const res = await axios.get(`/users`);
+        dispatch(loaduser(res.data));
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
 const userAction = (user) => async (dispatch, ) => {
     try {
         const res = await axios.post("/users", user);

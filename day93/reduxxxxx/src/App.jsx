@@ -26,15 +26,16 @@ const App = () => {
       min-h-full
       min-w-full
       overflow-x-hidden
-      pt-10
+      pt-17
+      pb-5
       ">
-    {/* <Nav /> */}
-      <div className="">
+      {/* <Nav /> */}
 
-        <MainRoutes />
-      </div>
+
+      <MainRoutes />
+
     </div>
-  
+
   );
 };
 
