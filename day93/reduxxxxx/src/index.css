@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+:root {
+  /* === Brand colours === */
+  --colour-primary-dark: #163A5F;
+  --colour-primary: #1D566E;
+  --colour-accent: #21ABA5;
+  --colour-accent-light: #45EBA5;
+
+  /* === Text colours === */
+  --text-light: #f1f1f1;
+  --text-muted: #CCCCCC;
+  --text-dark: #163A5F;
+  --text-secondary-dark: #1D566E;
+
+  /* === Background colours === */
+  --bg-dark: #163A5F;
+  --bg-section: #1D566E;
+  --bg-accent: #21ABA5;
+  --bg-light-accent: #45EBA5;
+
+  /* === UI Elements === */
+  --button-primary: var(--colour-accent);
+  --button-hover: var(--colour-accent-light);
+  --button-secondary: var(--colour-primary);
+  --button-text: var(--text-light);
+  --link-colour: var(--colour-accent);
+  --link-hover: var(--colour-accent-light);
+
+  /* === Status colours (optional) === */
+  --success: #45EBA5;
+  --info: #21ABA5;
+}
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}

@@ -1,23 +1,40 @@
 import { useEffect } from "react";
-import axios from "./api/axiosconfig";
+// import axios from "./api/axiosconfig";
+import userAction from "./store/userAction";
+import { useDispatch, useSelector } from 'react-redux'
+import productAction from "./store/productAction";
+import commentAction from "./store/commentAction";
+import MainRoutes from "./routes/MainRoutes";
+import Nav from "./components/Nav";
 const App = () => {
 
-  const getData = async () => {
-    try {
-      const res = await axios.get("/products");
-      console.log(res.data);
-    } catch (error) {
-      console.log(error);
+  const data = useSelector((state) => state.user);
+  // const dispatch = useDispatch();
 
-    }
-  }
+  console.log(data);
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   dispatch(userAction());
+  //   dispatch(productAction());
+  //   dispatch(commentAction());
+  // }, []);
 
   return (
-    <div>App</div>
+    <div className="
+      bg-(--colour-primary-dark)
+      text-(--text-light)
+      min-h-full
+      min-w-full
+      overflow-x-hidden
+      pt-10
+      ">
+    {/* <Nav /> */}
+      <div className="">
+
+        <MainRoutes />
+      </div>
+    </div>
+  
   );
 };
 
