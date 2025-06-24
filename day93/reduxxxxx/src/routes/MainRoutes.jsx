@@ -5,6 +5,8 @@ import Products from '../pages/Products'
 import Register from '../pages/Register'
 import Cart from '../pages/Cart'
 import Admin from '../pages/admin/Admin'
+import CreateProductPage from '../pages/admin/CreateProduct'
+
 
 
 const MainRoutes = () => {
@@ -16,6 +18,7 @@ const MainRoutes = () => {
         <Route path='/register' element={<Register />}/>
         <Route path='/cart' element={<Cart />}/>
         <Route path='/admin' element={<Admin />}/>
+        <Route path='/admin/create-product' element={<CreateProductPage />}/>
      </Routes>
   );
 };

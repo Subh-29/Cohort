@@ -5,18 +5,21 @@ import { allUserDetails } from '../../store/userAction';
 import productAction from '../../store/productAction';
 import ProductCard from '../../components/ProductComp';
 import UserCard from '../../components/UsersComp';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const AdminDashboard = () => {
     const [section, setSection] = useState(JSON.parse(sessionStorage.getItem("section")) || 'dashboard');
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const users = useSelector(state => state?.user?.data);
+    const products = useSelector(state => state?.product?.data);
+    // console.log("well prods: ", products);
+    
 
-    const users = useSelector(state => state.user.data);
-    const products = useSelector(state => state.product.data);
 
-
-    console.log("those users: ", users);
+    // console.log("those users: ", users);
     useEffect(() => {
         dispatch(allUserDetails());
         dispatch(productAction());
@@ -66,7 +69,7 @@ const AdminDashboard = () => {
                     </aside>
 
                     {/* Main Content */}
-                    <main className="flex-1 bg-(--bg-section) p-6 rounded-xl shadow-xl">
+                    <main className="flex-1 bg-(--bg-section)/30 p-6 rounded-xl shadow-xl">
                         {section === 'dashboard' && (
                             <div>
                                 <h2 className="text-2xl font-semibold mb-4">Stats Overview</h2>
@@ -94,7 +97,14 @@ const AdminDashboard = () => {
 
                         {section === 'products' && (
                             <div>
-                                <h2 className="text-2xl font-semibold mb-4">All Products</h2>
+                                <div className=' h-full w-full flex justify-between items-center'>
+                                    
+                                <h2 className="text-3xl font-semibold mb-4">All Products</h2>
+                                <h2 className="text-2xl h-full p-2 bg-(--colour-accent)/30 hover:bg-(--colour-accent-light) text-green-300 hover:text-(--text-dark) hover:shadow-[0_0_25px_5px_rgba(0,255,255,0.7)] cursor-pointer rounded-lg font-semibold mb-4"
+                                onClick={() => navigate("/admin/create-product")}
+                                >Add Products</h2>
+                                </div>
+                                
                                 {/* Replace with real product listing */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {products?.map((product, idx) => (

@@ -1,10 +1,11 @@
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { userLogin } from '../store/userAction';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     reset,
@@ -14,6 +15,8 @@ const LoginPage = () => {
   const loginHandler = (formdata) => {
     // console.log(formdata);
     dispatch(userLogin(formdata));
+    navigate("/");
+    window.location.reload();
     // reset();
   }
   return (
